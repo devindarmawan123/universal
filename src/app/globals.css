@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --header-height: 76px;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #EEF2EC;
+  color: #2B2B28;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Visible keyboard focus, consistent across the site */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid #C1442D;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Shared layout helpers */
+.section-shell {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .section-shell {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
+.seal-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  background-color: #C1442D;
+  color: #FAF8F2;
+  font-family: var(--font-fraunces), serif;
+  font-size: 0.8rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+/* Hairline rule used instead of boxed cards */
+.hr-hairline {
+  border-top: 1px solid #1B2A331f;
+}
+
+.snap-x-mandatory {
+  scroll-snap-type: x mandatory;
+}
+
+.snap-start-item {
+  scroll-snap-align: start;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
